@@ -73,3 +73,11 @@ ALTER COLUMN Price Numeric(10,2);
 -- Let's see Meta Information
 
 Select * from INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Price';
+
+-- Check info
+EXEC sp_help '[itiksha_mittal].[Price]';
+-- same query we can get using alt + F1
+
+--Remove comma from Price Column
+update [itiksha_mittal].[Price]
+set Price = REPLACE(Price, ',', '');
